@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:coursework_2/pages/home.dart';
 import 'package:coursework_2/pages/loading.dart';
+import 'package:coursework_2/pages/about.dart';
+import 'package:coursework_2/pages/contact.dart';
 
 class Application extends StatefulWidget {
   const Application({Key? key}) : super(key: key);
@@ -19,6 +21,8 @@ class _ApplicationState extends State<Application> {
       routes: {
         '/' : (context) => const Loading(),
         '/home' : (context) => const Home(),
+        '/about' : (context) => const About(),
+        '/contact' : (context) => const Contact(),
       },
     );
   }
