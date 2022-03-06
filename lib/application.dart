@@ -3,6 +3,7 @@ import 'package:coursework_2/pages/home.dart';
 import 'package:coursework_2/pages/loading.dart';
 import 'package:coursework_2/pages/about.dart';
 import 'package:coursework_2/pages/contact.dart';
+import 'package:coursework_2/pages/login.dart';
 
 class Application extends StatefulWidget {
   const Application({Key? key}) : super(key: key);
@@ -23,6 +24,7 @@ class _ApplicationState extends State<Application> {
         '/home' : (context) => const Home(),
         '/about' : (context) => const About(),
         '/contact' : (context) => const Contact(),
+        '/login' : (context) => const Login(),
       },
     );
   }
