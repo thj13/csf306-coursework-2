@@ -15,7 +15,7 @@ class Step extends StatelessWidget {
             // TODO: make this component scalable to screen size
             // TODO: replace hard coded image link
             Expanded(
-              child: Image.network("https://i0.wp.com/fitsri.com/wp-content/uploads/2020/12/Pranamasana-1024x683.jpg?resize=680%2C454")
+              child: Image.asset('/images/Pranamasana.png')
             ),
             // TODO: add descriptions etc
             // TODO: put these buttons onto same row

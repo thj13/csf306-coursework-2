@@ -4,7 +4,6 @@ import 'package:coursework_2/pages/loading.dart';
 import 'package:coursework_2/pages/about.dart';
 import 'package:coursework_2/pages/contact.dart';
 import 'package:coursework_2/pages/login.dart';
-import 'package:coursework_2/pages/step.dart';
 import 'package:coursework_2/pages/routine.dart';
 
 class Application extends StatefulWidget {

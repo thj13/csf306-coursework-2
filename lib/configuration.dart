@@ -1,27 +1,42 @@
 import 'package:flutter/material.dart';
 
-class Configuration extends StatefulWidget {
-  const Configuration({Key? key}) : super(key: key);
+class Configuration extends ChangeNotifier{
+  int _poseSequenceStage = 0;
 
-  @override
-  _ConfigurationState createState() => _ConfigurationState();
+  int getStage(){
+    return _poseSequenceStage;
+  }
+
+  void nextStage(){
+    _poseSequenceStage++;
+    notifyListeners();
+  }
+
+  void previousStage(){
+    _poseSequenceStage--;
+    notifyListeners();
+  }
 
 }
 
-class _ConfigurationState extends State<Configuration> {
-
-  @override
-  initState() {
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-
-
-
-
-
-}
+// class Configuration extends StatefulWidget {
+//   const Configuration({Key? key}) : super(key: key);
+//
+//   @override
+//   _ConfigurationState createState() => _ConfigurationState();
+//
+// }
+//
+// class _ConfigurationState extends State<Configuration> {
+//
+//   final posesDeserialised = List<Object>.filled(12, null);
+//
+//   @override
+//   initState() {
+//     super.initState();
+//   }
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container();
+//   }
