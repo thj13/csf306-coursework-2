@@ -6,30 +6,27 @@ class Anonymous extends StatefulWidget {
 
   @override
   _AnonymousState createState() => _AnonymousState();
-}  final String _buttonText = 'Continue as guest';
-//final AuthService _authService = AuthService();
-
-@override
-Widget build(BuildContext context) {
-  return TextButton(
-    onPressed: () async {
-      // var result = await _authService.signInAnon();
-      // if(result != null){
-      //   print('Signed in');
-      // }else{
-      //   print('Error signing in anon');
-      // }
-    },
-    child: Text(_buttonText),
-  );
 }
 
-
 class _AnonymousState extends State<Anonymous> {
+
+  final String _buttonText = 'Continue as guest';
+  final AuthService _authService = AuthService();
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    throw UnimplementedError();
+    return TextButton(
+      onPressed: () async {
+        // var result = await _authService.signInAnon();
+        // if(result != null){
+        //   print('Signed in');
+        // }else{
+        //   print('Error signing in anon');
+        // }
+      },
+      child: Text("_buttonText"),
+    );
   }
 
 }

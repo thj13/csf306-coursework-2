@@ -30,6 +30,9 @@ dependencies:
   flutter:
     sdk: flutter
 
+  assets:
+    assets/images/
+
   # Added dependencies
   firebase_core: ^1.13.1
   firebase_auth: ^3.3.9

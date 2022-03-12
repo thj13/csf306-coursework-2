@@ -5,13 +5,15 @@ class Pose {
   // String _breathing;
   // String _precaution;
   // String _benefits;
-
-  // Pose(String name, String process, String breathing, String precaution, String benefits){
+  // String _image;
+  //
+  // Pose(String name, String process, String breathing, String precaution, String benefits, String image){
   //   _name = name;
   //   _process = process;
   //   _breathing = breathing;
   //   _precaution = precaution;
   //   _benefits = benefits;
+  //   _image = image;
   // }
 
 }

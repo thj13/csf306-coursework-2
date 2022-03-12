@@ -12,11 +12,20 @@ class Login extends StatelessWidget {
         title: (const Text("Sign in")),
       ),
       body:Column(
-          children: const [
+          children: [
             Text("Login Screen"),
             Anonymous(),
+            anonymousSignIn(),
         ]
       ),
     );
   }
+
+  Widget anonymousSignIn(){
+    return TextButton(
+        onPressed: () {},
+        child: const Text('Continue as guest')
+    );
+  }
+
 }
