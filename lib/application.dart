@@ -5,17 +5,24 @@ import 'package:coursework_2/pages/about.dart';
 import 'package:coursework_2/pages/contact.dart';
 import 'package:coursework_2/pages/login.dart';
 import 'package:coursework_2/pages/routine.dart';
+import 'package:provider/provider.dart';
 
-class Application extends StatefulWidget {
+import 'configuration.dart';
+
+class Application extends StatelessWidget {
   const Application({Key? key}) : super(key: key);
 
-  @override
-  _ApplicationState createState() => _ApplicationState();
-}
+//   @override
+//   _ApplicationState createState() => _ApplicationState();
+// }
 
-class _ApplicationState extends State<Application> {
+// class _ApplicationState extends State<Application> {
+
   @override
   Widget build(BuildContext context) {
+
+    Configuration config = context.watch<Configuration>();
+
     return MaterialApp(
       title: 'Coursework 2',
       theme: ThemeData(),
