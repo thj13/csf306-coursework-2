@@ -7,6 +7,10 @@ import 'models/pose.dart';
 class Configuration extends ChangeNotifier{
   SourceDataRetriever dataRetriever = SourceDataRetriever();
   int _poseSequenceStage = 1;
+  bool breathingQueues = true;
+  bool processQueues = true;
+  bool precautionQueues = true;
+  bool benefitQueues = false;
   // late var jsonDecodedPoses = _decodeDataAsync();//test as List;
   Map<int,Pose>? stageToPoseMap = {}; //= await dataRetriever.getStageToPoseMapAsync(); //dataRetriever.getStageToPoseMapAsync() as Map<int,Pose>;
   // late var stageToPoseMap  = () => {dataRetriever.getStageToPoseMapAsync() as Map<int,Pose>} //dataRetriever.getStageToPoseMapAsync() as Map<int,Pose>;
@@ -35,7 +39,7 @@ class Configuration extends ChangeNotifier{
 
   Pose? getCurrentPose() {
     int test = _poseSequenceStage;
-    return stageToPoseMap![0];
+    return stageToPoseMap![test];
   }
 
   int getStage(){

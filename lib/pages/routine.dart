@@ -48,6 +48,15 @@ class Routine extends StatelessWidget {
             Container(
               child: Text(pose?.name ?? 'N/A')
             ),
+            Visibility(
+              child: Container(
+                child: Text(pose?.benefits ?? 'N/A'),
+              ),
+              visible: config.benefitQueues,
+            ),
+            Container(
+                child: Text(pose?.breathing ?? 'N/A')
+            ),
             // TODO: add descriptions etc
             // TODO: get buttons to work from state
             Row(
@@ -68,6 +77,7 @@ class Routine extends StatelessWidget {
                       //widget.config.nextStage();
                       // configuration.decodeDataAsync();
                       // print(config.jsonDecodedPoses);
+                      config.nextStage();
                     },
                     child: const Text("Go next")
                 ),
