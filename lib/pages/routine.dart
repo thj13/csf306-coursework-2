@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../components/routine_preferences.dart';
 import '../configuration.dart';
 import '../models/pose.dart';
 
@@ -57,6 +58,8 @@ class Routine extends StatelessWidget {
             Container(
                 child: Text(pose?.breathing ?? 'N/A')
             ),
+            RoutinePreferences(),
+
             // TODO: add descriptions etc
             // TODO: get buttons to work from state
             Row(
