@@ -32,6 +32,8 @@ class SourceDataRetriever{
     'Mountain Pose (Parvatasana)' : Image.asset('assets/images/Pranamasana.png')
   };
 
+  Map<int,Pose> _stageToPoseMap = {};
+
   Future<Map<int,Pose>> getStageToPoseMapAsync() async {
 
     Map<int,Pose> stageToPoseMap = {};
@@ -43,12 +45,13 @@ class SourceDataRetriever{
 
     for(int i = 0; i < decoded.length; i++) {
       print('Something');
-        // String stageName = _poseStageToNameMap[0] as String;//_poseStageToNameMap[i] as String;
-        // print('Stage name: ' +stageName);
-        // Image stageImage = _poseNameToImageAssetMap['Prayer pose'] as Image;//_poseNameToImageAssetMap[stageName] as Image;
-        //
-        // print('Stage name: ' +stageName);
-        // print(stageImage);
+
+        String stageName = _poseStageToNameMap[i+1] as String;
+        print('Stage name: ' +stageName);
+        Image stageImage = _poseNameToImageAssetMap['Prayer pose'] as Image;//Switch to stageName
+
+        print('Stage name: ' +stageName);
+        print(stageImage);
 
         dynamic tempObject = decoded[i];
         print(tempObject);
@@ -64,11 +67,11 @@ class SourceDataRetriever{
 
         print(poseToAdd);
 
-        stageToPoseMap[i] = poseToAdd;
+        stageToPoseMap[i+1] = poseToAdd;
       // }
     }
 
-    print(stageToPoseMap);
+    print('MAP: ' +stageToPoseMap.toString());
 
     return stageToPoseMap;
   }
@@ -80,6 +83,27 @@ class SourceDataRetriever{
   //   //print(decoded);
   //   return decoded as Future<List>;
   // }
+
+  Future<Map<int,Pose>> getHathaSuryaNamaskar() async{
+    return _stageToPoseMap;
+  }
+
+  Future<Map<int,Pose>> getSivanandaSunSalutation() async{
+    return _stageToPoseMap;
+  }
+
+  Future<Map<int,Pose>> getAshtangaSuryaNamaskarA() async{
+    return _stageToPoseMap;
+  }
+
+  Future<Map<int,Pose>> getAshtangaSuryaNamaskarB() async{
+    return _stageToPoseMap;
+  }
+
+  Future<Map<int,Pose>> getIyengarSuryaNamaskar() async{
+    return _stageToPoseMap;
+  }
+
 
 
 

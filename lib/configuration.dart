@@ -5,6 +5,7 @@ import 'business_logic/source_data-retriever.dart';
 import 'models/pose.dart';
 
 class Configuration extends ChangeNotifier{
+
   SourceDataRetriever dataRetriever = SourceDataRetriever();
   int _poseSequenceStage = 1;
   bool _breathingQueues = false;
@@ -16,21 +17,25 @@ class Configuration extends ChangeNotifier{
   Map<int,Pose>? stageToPoseMap = {}; //= await dataRetriever.getStageToPoseMapAsync(); //dataRetriever.getStageToPoseMapAsync() as Map<int,Pose>;
   // late var stageToPoseMap  = () => {dataRetriever.getStageToPoseMapAsync() as Map<int,Pose>} //dataRetriever.getStageToPoseMapAsync() as Map<int,Pose>;
 
-  void setThings() async{
+  void _setThings() async{
     stageToPoseMap = await dataRetriever.getStageToPoseMapAsync();
   }
 
   Configuration(){
-    print("TEST ME NOW PLS");
+    // print("TEST ME NOW PLS");
     // stageToPoseMap = dataRetriever.getStageToPoseMapAsync() as Map<int,Pose>;
     // print(jsonDecodedPoses);
-    setThings();
-    print(stageToPoseMap);
+    _setThings();
+    // print(stageToPoseMap);
 
   }
 
-
   int get poseSequenceStage => _poseSequenceStage;
+  bool get breathingQueues => _breathingQueues;
+  bool get processQueues => _processQueues;
+  bool get precautionQueues => _precautionQueues;
+  bool get benefitQueues => _benefitQueues;
+  bool get allQueues => _allQueues;
 
   set poseSequenceStage(int value) {
     _poseSequenceStage = value;
@@ -51,15 +56,11 @@ class Configuration extends ChangeNotifier{
   }
 
   void previousStage(){
-    _poseSequenceStage--;
-    notifyListeners();
+    if(_poseSequenceStage > 1){
+      _poseSequenceStage--;
+      notifyListeners();
+    }
   }
-
-  bool get breathingQueues => _breathingQueues;
-  bool get processQueues => _processQueues;
-  bool get precautionQueues => _precautionQueues;
-  bool get benefitQueues => _benefitQueues;
-  bool get allQueues => _allQueues;
 
   void changeAllQueueStates(bool value){
     _allQueues = value;

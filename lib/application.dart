@@ -7,6 +7,7 @@ import 'package:coursework_2/pages/login.dart';
 import 'package:coursework_2/pages/routine.dart';
 import 'package:provider/provider.dart';
 
+import 'components/routine_preferences.dart';
 import 'configuration.dart';
 
 class Application extends StatelessWidget {
@@ -34,6 +35,7 @@ class Application extends StatelessWidget {
         '/contact' : (context) => const Contact(),
         '/login' : (context) => const Login(),
         '/routine' : (context) => const Routine(),
+        '/preferences' : (context) => const RoutinePreferences(),
       },
     );
   }

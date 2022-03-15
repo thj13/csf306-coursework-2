@@ -4,18 +4,16 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 
 import 'package:flutter/material.dart';
+import 'package:photo_view/photo_view.dart';
 import 'package:provider/provider.dart';
 
 import '../components/routine_preferences.dart';
 import '../configuration.dart';
 import '../models/pose.dart';
+import 'exit_routine.dart';
 
 class Routine extends StatelessWidget {
   const Routine({Key? key}) : super(key: key);
-
-
-
-  // final Consumer<Configuration> test;
 
   final bool visible = true;
 
@@ -29,7 +27,7 @@ class Routine extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Pose"),
+        title: Text(pose?.name ?? 'Poses'),
       ),
       body: SafeArea(
         child: Column(
@@ -37,7 +35,9 @@ class Routine extends StatelessWidget {
             // TODO: make this component scalable to screen size
             // TODO: replace hard coded image link
             Expanded(
-                child: Image.asset('assets/images/Pranamasana.png'),
+                child: PhotoView(
+                    imageProvider: AssetImage('assets/images/Pranamasana.png'),
+                ),
               // child: Image(image: pose?.image),
             ),
             Visibility(
@@ -58,8 +58,6 @@ class Routine extends StatelessWidget {
             Container(
                 child: Text(pose?.breathing ?? 'N/A')
             ),
-            RoutinePreferences(),
-
             // TODO: add descriptions etc
             // TODO: get buttons to work from state
             Row(
@@ -84,6 +82,19 @@ class Routine extends StatelessWidget {
                     },
                     child: const Text("Go next")
                 ),
+                ElevatedButton(
+                    child: Text('Exit'),
+                    onPressed: () {
+                      showDialog(
+                          context: context,
+                          builder: (_) => AlertDialog(
+                            title: Text('1'),
+                              content: ExitRoutine()
+                          )
+                      );
+
+                    }
+                ),
               ],
             ),
           ],
@@ -91,4 +102,5 @@ class Routine extends StatelessWidget {
       ),
     );
   }
+
 }
